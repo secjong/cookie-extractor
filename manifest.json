@@ -1,0 +1,33 @@
+{
+  "name": "Cookie Extractor",
+  "description": "Get httpOnly cookies",
+  "manifest_version": 3,
+  "version": "0.1",
+  "icons": {
+    "16": "images/cookie_16.png",
+    "32": "images/cookie_32.png",
+    "48": "images/cookie_48.png",
+    "128": "images/cookie_128.png"
+  },
+  "host_permissions": [
+    "*://*.interpark.com/*",
+    "*://*.inpark-tour.com/*"
+  ],
+  "permissions": [
+    "cookies",
+    "storage"
+  ],
+  "action": {
+    "default_icon": "images/cookie_32.png",
+    "default_title": "쿠키가져오기",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.inpark-tour.com/*"
+      ],
+      "js": ["scripts/inject.js"]
+    }
+  ]
+}
